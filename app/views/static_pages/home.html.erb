@@ -1,0 +1,10 @@
+<% provide(:title, "Welcome") %>
+<h1>Welcome</h1>
+
+<%= link_to 'pricing', pricing_path() %>
+
+<%= javascript_tag do %>
+	$(function() {
+		Homes.initialize();
+	});
+<% end %>
