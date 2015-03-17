@@ -1,0 +1,10 @@
+<h1>Properties</h1>
+
+<form id="new_property">
+  <input type="text" name="name" id="new_property_name">
+  <input type="submit" value="Add">
+</form>
+
+<ul id="properties"></ul>
+
+<button id="draw">Draw Winner</button>

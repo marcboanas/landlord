@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'pricing' => 'static_pages#pricing', as: :pricing
 
+  namespace :api do
+    resources :properties
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

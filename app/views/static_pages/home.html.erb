@@ -1,10 +1,20 @@
-<% provide(:title, "Welcome") %>
-<h1>Welcome</h1>
-
-<%= link_to 'pricing', pricing_path() %>
+<!-- Javascript -->
 
 <%= javascript_tag do %>
 	$(function() {
 		Homes.initialize();
 	});
 <% end %>
+
+<!-- Title -->
+
+<% provide(:title, "Welcome") %>
+
+<!-- Header -->
+
+<h1>Welcome</h1>
+<%= link_to 'pricing', pricing_path() %>
+
+<!-- Backbone Container -->
+
+<div id="container">Loading...</div>

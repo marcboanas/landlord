@@ -1,0 +1,2 @@
+<%= @property.get('name') %><br/>
+<%= @property.get('empty') %>
