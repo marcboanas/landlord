@@ -1,0 +1,8 @@
+<p>Hi <%= @user.full_name %>,</p>
+
+<p>
+Click on the link below to verify your account:
+</p>
+
+<%= link_to "Verify Account", edit_account_verification_url(@user.verification_token,
+                                                    email: @user.email) %>
