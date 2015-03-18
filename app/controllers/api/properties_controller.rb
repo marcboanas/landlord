@@ -10,7 +10,12 @@ class Api::PropertiesController < ApplicationController
   end
 
   def create
-    respond_with @property = Property.create(property_params), location: api_property_path(@property)
+    @property = Property.new(property_params)
+    if @property.save
+      respond_with @property, location: api_property_path(@property)
+    else
+      respond_with Property.create(property_params)
+    end
   end
 
   def update
