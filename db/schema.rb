@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315132822) do
+ActiveRecord::Schema.define(version: 20150318103154) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "name"
@@ -19,5 +19,29 @@ ActiveRecord::Schema.define(version: 20150315132822) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.string   "verification_digest"
+    t.boolean  "email_verification"
+    t.datetime "verified_at"
+    t.string   "api_authtoken"
+    t.datetime "authtoken_expiry"
+    t.string   "provider"
+    t.string   "uid"
+    t.boolean  "admin"
+    t.string   "remember_digest"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["uid"], name: "index_users_on_uid", unique: true
 
 end

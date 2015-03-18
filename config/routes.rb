@@ -1,12 +1,30 @@
 Rails.application.routes.draw do
 
+  #Root Path
   root 'static_pages#home'
 
+  #Pricing Path
   get 'pricing' => 'static_pages#pricing', as: :pricing
 
+  #API Paths
   namespace :api do
     resources :properties
   end
+
+  #Sessions Routes
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
+  #Users Routes
+  get 'signup' => 'users#new'
+  resources :users
+
+  #Account Verifications
+  resources :account_verification, only: [:edit]
+
+  #Password Resets
+  resources :password_reset, only: [:new, :create, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
